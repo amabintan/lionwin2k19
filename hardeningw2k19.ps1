@@ -182,8 +182,6 @@ Write-Host "Finished [Point 1.10 & 1.11]"
 <# -------------------- End of Function Hardening Point 1.10 - 1.11 -------------------- #>
 
 <# Main Program For Hardening#>
-Write-Host "#----------- Setup Local User [Preconfig] -----------#"
-
 <# Call Function EventLog-Settings  1.2 - 1.5 Process#>
 Write-Host "Setup Secure Policies"
 Set-SecurePolicies
