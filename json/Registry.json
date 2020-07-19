@@ -1,0 +1,285 @@
+[
+    {
+        "point":"1.10_1",
+        "key":"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
+        "name":"NoDriveTypeAutoRun",
+        "value":"0xFF"
+    },
+    {
+        "point":"1.10_2",
+        "key":"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
+        "name":"NoAutorun",
+        "value":"1"
+    },
+    {
+        "point":"1.10_3",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer",
+        "name":"NoAutoplayfornonVolume",
+        "value":"1"
+    },
+    {
+        "point":"1.10_4",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Installer",
+        "name":"AlwaysInstallElevat",
+        "value":"1"
+    },
+    {
+        "point":"1.10_5",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Peernet",
+        "name":"Disabled",
+        "value":"1"
+    },
+    {
+        "point":"1.10_5",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Peernet",
+        "name":"Disabled",
+        "value":"1"
+    },
+    {
+        "point":"1.10_6",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Network Connections",
+        "name":"NC_AllowNetBridge_NLA",
+        "value":"0"
+    },
+    {
+        "point":"1.10_7",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\services\\USBSTOR",
+        "name":"Start",
+        "value":"4"
+    },
+    {
+        "point":"1.10_8",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Services\\Cdrom",
+        "name":"Start",
+        "value":"4"
+    },
+    {
+        "point":"1.10_9",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Services\\Flpydisk",
+        "name":"Start",
+        "value":"4"
+    },
+    {
+        "point":"1.10_10",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Services\\Sfloppy",
+        "name":"Start",
+        "value":"4"
+    },
+    {
+        "point":"1.10_11",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\StorageDevicePolicies",
+        "name":"WriteProtect",
+        "value":"1"
+    },
+    {
+        "point":"1.10_12a",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\SSL 2.0\\Client",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_12b",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\SSL 2.0\\Server",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_13a",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\SSL 3.0\\Client",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_13b",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\SSL 3.0\\Server",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_14a",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.0\\Client",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_14b",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.0\\Server",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_15a",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.1\\Client",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_15b",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.1\\Server",
+        "name":"DisabledByDefault",
+        "value":"1"
+    },
+    {
+        "point":"1.10_16a",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2\\Client",
+        "name":"DisabledByDefault",
+        "value":"0"
+    },
+    {
+        "point":"1.10_16b",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2\\Server",
+        "name":"DisabledByDefault",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17a",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\DES 56/56",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17b",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\NULL",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17c",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\RC2 40/128",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17d",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\RC2 56/128",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17e",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\RC4 40/128",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17f",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\RC2 56/128",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17g",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\RC4 64/128",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17h",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\RC4 128/128",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_17i",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\Triple DES 168",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.10_18",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameter",
+        "name":"Enabled",
+        "value":"0"
+    },
+    {
+        "point":"1.11_1",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"fDenyTSConnections",
+        "value":"0"
+    },
+    {
+        "point":"1.11_2a",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"KeepAliveEnable",
+        "value":"1"
+    },
+    {
+        "point":"1.11_2b",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"KeepAliveInterval",
+        "value":"5"
+    },
+    {
+        "point":"1.11_3",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"fSingleSessionPerUser",
+        "value":"1"
+    },
+    {
+        "point":"1.11_4",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"fDisableClip",
+        "value":"1"
+    },
+    {
+        "point":"1.11_5",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"fDisableCdm",
+        "value":"1"
+    },
+    {
+        "point":"1.11_6",
+        "key":"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
+        "name":"NoDisconnect",
+        "value":"1"
+    },
+    {
+        "point":"1.11_7",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"fEncryptRPCTraffic",
+        "value":"1"
+    },
+    {
+        "point":"1.11_8",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"MinEncryptionLevel",
+        "value":"2"
+    },
+    {
+        "point":"1.11_9",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"fResetBroken",
+        "value":"1"
+    },
+    {
+        "point":"1.11_10",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"MaxIdleTime",
+        "value":"dbba0(900000)"
+    },
+    {
+        "point":"1.11_11",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"MaxDisconnectionTime",
+        "value":"493e0(300000)"
+    },
+    {
+        "point":"1.11_12",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"RemoteAppLogoffTimeLimit",
+        "value":"dbba0(900000)"
+    },
+    {
+        "point":"1.11_13",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"DeleteTempDirsOnExit",
+        "value":"1"
+    },
+    {
+        "point":"1.11_14",
+        "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
+        "name":"PerSessionTempDir",
+        "value":"1"
+    }
+]
+
