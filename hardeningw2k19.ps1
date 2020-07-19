@@ -1,4 +1,12 @@
 <# -------------------- Funtion Prereq User -------------------- #>
+function Write-ProgressHelper([int]$step,[string]$message) {
+for ($i = 1; $i -le $step; $i++ )
+{
+    Write-Progress -Activity "$message" -Status "$i% Complete:" -PercentComplete (($i / $step)*100);
+}
+Write-Progress  -Activity "$message" -Completed
+}
+
 function SetupGroupUser{
 Write-Host "#----------- Process Hardening [Point 1.9] -----------#"
 New-LocalUser "yyyadmin" -NoPassword -FullName "Secondary Administrator" -Description "Secondary Administrator"
@@ -19,14 +27,18 @@ Write-Host "Finished [Point 1.9]"
 function Set-SecurePolicies{
 Write-Host "#----------- Process Hardening [Point 1.2 - 1.5] -----------#"
 Write-Host "Apply Security Policies"
+Write-ProgressHelper "50" "Applying Security Policies"
 secedit /configure /db tmp\temp.sdb /cfg etc/SecurityPolicy2019.inf
 Start-Sleep -s 2
+Write-Host "Apply Security Policies Completed"
 
 Write-Host "Apply Audit Policies"
+Write-ProgressHelper "50" "Applying Audit Policies"
 Copy-Item "etc\AuditPolicy.csv" -Destination "C:\Windows\System32\GroupPolicy\Machine\Microsoft\Windows NT\Audit\audit.csv"
 Copy-Item "etc\AuditPolicy.csv" -Destination "C:\Windows\security\audit\audit.csv"
 auditpol /restore /file:C:\Windows\security\audit\audit.csv
 Start-Sleep -s 2
+Write-Host "Apply Security Policies Completed"
 
 Write-Host "Finished [Point 1.2 - 1.5]"
 Write-Host -NoNewLine 'Press any key to continue...';
@@ -173,13 +185,35 @@ foreach ($line in $PostRegistry) {
 		}
 	}
 	
-	Write-Host "------------------ OUTPUT $point ------------------"
+	Write-Host "------------------ OUTPUT $PRpoint ------------------"
 	Get-ItemProperty -Path "$PRkey" -Name "$PRname"
 	Write-Host "------------------ ############# ------------------"	
 } 
 Write-Host "Finished [Point 1.10 & 1.11]"
 }
 <# -------------------- End of Function Hardening Point 1.10 - 1.11 -------------------- #>
+
+<# -------------------- Funtion Additional Post Script --------------------#>
+Function PostScript {
+$PostServices = @("Windows Push Notifications User Service*","User Data Storage*","User Data Access*","Software Protection*","Contact Data*","Connected Devices Platform Service*","Connected Devices Platform User Service*")
+
+foreach ($item in $PostServices){
+	$Service = Get-Service -DisplayName "$item" | select Name
+	write-host "Test: " $Service[0].Name
+    $name = $Service[0].Name
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\$name" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
+    if($?)
+    {
+       "command succeeded"
+    }
+    else
+    {
+        $msg = $Error[0].Exception.Message
+        "command failed : $msg"
+    }
+}
+}
+<# -------------------- Funtion Additional Post Script --------------------#>
 
 <# Main Program For Hardening#>
 <# Call Function EventLog-Settings  1.2 - 1.5 Process#>
@@ -215,6 +249,9 @@ SetupGroupUser
 
 <# Call Function EventLog-Settings  1.10 - 1.11 Process#>
 Setup-PostRegistry
+
+<# Call Function PostScriopt #>
+PostScript
 
 <# Main Program For Hardening #>
 
