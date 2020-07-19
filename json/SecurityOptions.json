@@ -7,7 +7,7 @@
     },
     {
         "point":"1.5_49",
-        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CurrentVersion\\CrashControl",
+        "key":"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
         "name":"AutoReboot",
         "value":"1"
     },
