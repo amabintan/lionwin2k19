@@ -7,6 +7,27 @@ for ($i = 1; $i -le $step; $i++ )
 Write-Progress  -Activity "$message" -Completed
 }
 
+<# -------------------- Funtion Create Path -------------------- #>
+function Create-MissingPath{
+$Cekpath = @("HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0", "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0", "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0", "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DES 56$([char]0x2215)56","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NULL","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 40$([char]0x2215)128","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 56$([char]0x2215)128","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40$([char]0x2215)128","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56$([char]0x2215)128","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 64$([char]0x2215)128","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128$([char]0x2215)128","HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168", "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer", "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Installer", "HKLM:\SOFTWARE\Policies\Microsoft\Peernet", "HKLM:\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies", "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameter")
+
+foreach ($item in $Cekpath) {
+   if(Test-Path -path "$item"){
+		"[Skipped] - Path exist: $item"
+   }else{
+		Write-Host "item = $item"
+		New-Item -Path "$item"
+		if($?){ 
+		"Path Added..."
+		}else {
+				$msg = $Error[0].Exception.Message
+				"Path failed to add : $msg"
+		}
+   }
+}
+}
+<# -------------------- Funtion Create Path -------------------- #>
+
 function SetupGroupUser{
 Write-Host "#----------- Process Hardening [Point 1.9] -----------#"
 New-LocalUser "yyyadmin" -NoPassword -FullName "Secondary Administrator" -Description "Secondary Administrator"
@@ -34,6 +55,8 @@ Write-Host "Apply Security Policies Completed"
 
 Write-Host "Apply Audit Policies"
 Write-ProgressHelper "50" "Applying Audit Policies"
+New-Item -ItemType "directory" -Path "C:\Windows\System32\GroupPolicy\Machine\Microsoft\Windows NT\Audit" -Force
+Start-Sleep -s 2
 Copy-Item "etc\AuditPolicy.csv" -Destination "C:\Windows\System32\GroupPolicy\Machine\Microsoft\Windows NT\Audit\audit.csv"
 Copy-Item "etc\AuditPolicy.csv" -Destination "C:\Windows\security\audit\audit.csv"
 auditpol /restore /file:C:\Windows\security\audit\audit.csv
@@ -248,6 +271,8 @@ Write-Host "Finished [Point 1.8]"
 SetupGroupUser
 
 <# Call Function EventLog-Settings  1.10 - 1.11 Process#>
+Create-MissingPath
+Start-Sleep -s 2
 Setup-PostRegistry
 
 <# Call Function PostScriopt #>
