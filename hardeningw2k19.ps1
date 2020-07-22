@@ -226,6 +226,8 @@ foreach ($item in $PostServices){
 
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\BFE" -Name "Start" -Value "3" -Type DWORD -ErrorAction SilentlyContinue
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WdNisSvc" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
+
+Write-Host "------------------Hardening Finished ------------------"
 }
 <# -------------------- Funtion Additional Post Script --------------------#>
 
