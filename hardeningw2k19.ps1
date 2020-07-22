@@ -206,7 +206,7 @@ Write-Host "Finished [Point 1.10 & 1.11]"
 
 <# -------------------- Funtion Additional Post Script --------------------#>
 Function PostScript {
-$PostServices = @("Windows Push Notifications User Service*","User Data Storage*","User Data Access*","Software Protection*","Contact Data*","Connected Devices Platform Service*","Connected Devices Platform User Service*","Client License Service*","Connected Devices Platform Service*","Enterprise App Management Service*","Microsoft Passport*","Update Orchestrator Service*","Windows Defender Antivirus Service*","Windows Defender Firewall*","WinHTTP Web Proxy Auto-Discovery Service*")
+$PostServices = @("Windows Push Notifications User Service*","User Data Storage*","User Data Access*","Software Protection*","Contact Data*","Connected Devices Platform Service*","Connected Devices Platform User Service*","Client License Service*","Connected Devices Platform Service*","Enterprise App Management Service*","Microsoft Passport*","Update Orchestrator Service*","Windows Defender Firewall*","WinHTTP Web Proxy Auto-Discovery Service*")
 
 foreach ($item in $PostServices){
 	$Service = Get-Service -DisplayName "$item" | select Name
@@ -226,8 +226,10 @@ foreach ($item in $PostServices){
 
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\BFE" -Name "Start" -Value "3" -Type DWORD -ErrorAction SilentlyContinue
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WdNisSvc" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WinDefend" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
 
 Write-Host "------------------Hardening Finished ------------------"
+Restart-Computer -confirm
 }
 <# -------------------- Funtion Additional Post Script --------------------#>
 
