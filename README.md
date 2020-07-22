@@ -1,4 +1,4 @@
-# lionwin2k19
+# Lionwin2k19 Project
 
 Windows Server 2019 Hardening.
 
