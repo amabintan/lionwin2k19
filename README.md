@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 2. Copy the source code to C:\, extract the code
 
-3  Open Powershell
+3. Open Powershell
 
 ## Running the tests
 
@@ -26,7 +26,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Barli D** - *Initial work* - [PurpleBooth](https://github.com/amabintan/lionwin2k19)
+* **Barli D** - *Initial work* - [https://github.com/amabintan/lionwin2k19](https://github.com/amabintan/lionwin2k19)
 
 ## License
 
