@@ -1,20 +1,23 @@
 # Lionwin2k19 Project
+The objective is to ensure the security of Microsoft Windows 2019 Operating Systems, i.e. prevent unauthorized access to the systems. this checklist based on custom hardening of CIS benchmark.
+
 ## Getting Started
 
-This is the baseline security checklist for Windows Server 2019 Hardening
+The Microsoft Windows 2019 Server Security Standards only addresses the operating system security of Microsoft Windows 2019 production/dr systems.  It does not address applications security, non-production servers. These are following security checklist for Windows Server 2019 scope:
 
+**Scope**
 | Point | Task | Description
 | --- | --- | --- |
-| 1.1 | General Information | ... |
-| 1.2 | Account Policies | ... |
-| 1.3 | Advanced Audit Policy | ... |
-| 1.4 | User Rights Assignment | ... |
-| 1.5 | Security Options | ... |
-| 1.6 | Event Log Settings | ... |
-| 1.7 | Default Installed Services  | ... |
-| 1.8 | Optional Services (Optional)| ... |
-| 1.9 | Account and Password Settings | ... |
-| 1.10 | Registry Key Entries | ... |
+| 1.1 | General Information | Included on Script |
+| 1.2 | Account Policies | Included on Script |
+| 1.3 | Advanced Audit Policy | Included on Script |
+| 1.4 | User Rights Assignment | Included on Script |
+| 1.5 | Security Options | Included on Script |
+| 1.6 | Event Log Settings | Included on Script |
+| 1.7 | Default Installed Services  | Included on Script |
+| 1.8 | Optional Services (Optional)| Manual |
+| 1.9 | Account and Password Settings | Included on Script |
+| 1.10 | Registry Key Entries | Included on Script |
 
 ### Prerequisites
 
