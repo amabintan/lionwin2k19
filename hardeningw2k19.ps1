@@ -206,11 +206,11 @@ Write-Host "Finished [Point 1.10 & 1.11]"
 
 <# -------------------- Funtion Additional Post Script --------------------#>
 Function PostScript {
-$PostServices = @("Windows Push Notifications User Service*","User Data Storage*","User Data Access*","Software Protection*","Contact Data*","Connected Devices Platform Service*","Connected Devices Platform User Service*","Base Filtering Engine*","Client License Service*","Connected Devices Platform Service*","Enterprise App Management Service*","Microsoft Passport*","Update Orchestrator Service*","Windows Defender Antivirus Network Inspection Service*","Windows Defender Antivirus Service*","Windows Defender Firewall*","WinHTTP Web Proxy Auto-Discovery Service*")
+$PostServices = @("Windows Push Notifications User Service*","User Data Storage*","User Data Access*","Software Protection*","Contact Data*","Connected Devices Platform Service*","Connected Devices Platform User Service*","Client License Service*","Connected Devices Platform Service*","Enterprise App Management Service*","Microsoft Passport*","Update Orchestrator Service*","Windows Defender Antivirus Service*","Windows Defender Firewall*","WinHTTP Web Proxy Auto-Discovery Service*")
 
 foreach ($item in $PostServices){
 	$Service = Get-Service -DisplayName "$item" | select Name
-	write-host "Test: " $Service[0].Name
+	write-host "Service Name: " $Service[0].Name
     $name = $Service[0].Name
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\$name" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
     if($?)
@@ -223,6 +223,9 @@ foreach ($item in $PostServices){
         "command failed : $msg"
     }
 }
+
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\BFE" -Name "Start" -Value "3" -Type DWORD -ErrorAction SilentlyContinue
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WdNisSvc" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
 }
 <# -------------------- Funtion Additional Post Script --------------------#>
 
