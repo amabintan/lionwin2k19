@@ -1,10 +1,7 @@
 # Lionwin2k19 Project
-
-Windows Server 2019 Hardening.
-
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This is the baseline security checklist for Windows Server 2019 Hardening
 
 | Point | Task | Description
 | --- | --- | --- |
@@ -23,9 +20,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Download the source code from this url https://github.com/amabintan/lionwin2k19/archive/master.zip
 
-2. Copy the source code to C:\, extract the code
+2. Copy the source code to C:\, extract the file
 
-3. Open Powershell
+3. Open Powershell, go to root directory of source code
 
 ## Running the hardening script
 
