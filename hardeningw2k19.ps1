@@ -206,7 +206,7 @@ Write-Host "Finished [Point 1.10 & 1.11]"
 
 <# -------------------- Funtion Additional Post Script --------------------#>
 Function PostScript {
-$PostServices = @("Windows Push Notifications User Service*","User Data Storage*","User Data Access*","Software Protection*","Contact Data*","Connected Devices Platform Service*","Connected Devices Platform User Service*")
+$PostServices = @("Windows Push Notifications User Service*","User Data Storage*","User Data Access*","Software Protection*","Contact Data*","Connected Devices Platform Service*","Connected Devices Platform User Service*","Base Filtering Engine*","Client License Service*","Connected Devices Platform Service*","Enterprise App Management Service*","Microsoft Passport*","Update Orchestrator Service*","Windows Defender Antivirus Network Inspection Service*","Windows Defender Antivirus Service*","Windows Defender Firewall*","WinHTTP Web Proxy Auto-Discovery Service*")
 
 foreach ($item in $PostServices){
 	$Service = Get-Service -DisplayName "$item" | select Name
