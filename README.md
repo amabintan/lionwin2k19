@@ -15,7 +15,7 @@ The Microsoft Windows 2019 Server Security Standards only addresses the operatin
 | 1.5 | Security Options | Included on Script |
 | 1.6 | Event Log Settings | Included on Script |
 | 1.7 | Default Installed Services  | Included on Script |
-| 1.8 | Optional Services (Optional)| Manual |
+| 1.8 | Optional Services (Optional)| Manual , If required|
 | 1.9 | Account and Password Settings | Included on Script |
 | 1.10 | Registry Key Entries | Included on Script |
 
@@ -33,6 +33,20 @@ The Microsoft Windows 2019 Server Security Standards only addresses the operatin
 C:\> cd lionwin2k19-master
 C:\lionwin2k19-master> .\hardeningw2k19.ps1
 ```
+
+**Note**
+> On Windows Server 2019, we need to  perform manual task to disable Windows Defender Service.
+>1. Run Command Prompt as Administrator.
+>2. Type msc and press Enter.
+>3. Go to Computer Configuration > Administrative Templates > Windows Components > Windows Defender.
+>4. Double click Turn Off Windows Defender.
+>5. Check Enabled.
+>6. Click Apply.
+> Then run this command on Powershell
+>```
+>Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WdNisSvc" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
+>Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WinDefend" -Name "Start" -Value "4" -Type DWORD -ErrorAction SilentlyContinue
+>```
 
 ## Authors
 
