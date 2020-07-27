@@ -33,6 +33,7 @@ Write-Host "#----------- Process Hardening [Point 1.9] -----------#"
 New-LocalUser "yyyadmin" -NoPassword -FullName "Secondary Administrator" -Description "Secondary Administrator"
 New-LocalUser "drctrlid" -NoPassword -FullName "DR Alternate Administrator" -Description "DR Alternate Administrator"
 New-LocalUser "CLIUSR" -NoPassword -FullName "CLI User" -Description "CLI User"
+New-LocalUser "clowservice" -NoPassword -FullName "clowservice" -Description "clowservice User"
 Add-LocalGroupMember -Group "Administrators" -Member "yyyadmin", "drctrlid"
 New-LocalGroup -Name "Allow Logon Users"
 New-LocalGroup -Name "Allow Terminal Users"
@@ -109,7 +110,7 @@ Write-Host "Finished [Point 1.6]"
 function Services-Settings{
 Write-Host "#----------- Process Hardening [Point 1.7] -----------#"
 
-Write-Host "Starting Trigger Execution"
+<#Write-Host "Starting Trigger Execution"
 start-process "etc/trigger.bat"
 if($?)
 {
@@ -119,7 +120,7 @@ else
 {
     $msg = $Error[0].Exception.Message
     "command failed : $msg"
-}
+}#>
 
 $ExceptionPoint = @("1.7_178","1.7_148","1.7_147","1.7_125","1.7_23","1.7_21","1.7_14")
 

@@ -255,19 +255,19 @@
       "point":"1.11_10",
       "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
       "name":"MaxIdleTime",
-      "value":"dbba0(900000)"
+      "value":"900000"
    },
    {
       "point":"1.11_11",
       "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
       "name":"MaxDisconnectionTime",
-      "value":"493e0(300000)"
+      "value":"300000"
    },
    {
       "point":"1.11_12",
       "key":"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services",
       "name":"RemoteAppLogoffTimeLimit",
-      "value":"dbba0(900000)"
+      "value":"900000"
    },
    {
       "point":"1.11_13",
